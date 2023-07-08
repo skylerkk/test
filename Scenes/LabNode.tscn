@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/Chicken Icon.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Lab Background.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/LabNode.gd" type="Script" id=3]
+
+[node name="LabNode" type="Node"]
+script = ExtResource( 3 )
+
+[node name="LabImage" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 2 )
+
+[node name="FarmButton" type="TextureButton" parent="LabImage"]
+margin_left = 1760.0
+margin_right = 1920.0
+margin_bottom = 160.0
+texture_normal = ExtResource( 1 )
+
+[connection signal="pressed" from="LabImage/FarmButton" to="." method="_on_FarmButton_pressed"]
